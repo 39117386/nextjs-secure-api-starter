@@ -89,10 +89,10 @@ NEXT_PUBLIC_TMDB_API_KEY=your_api_key_here
 
 ## ▲ Deploy on Vercel
 
-If this repository is imported as-is, the Next.js app lives inside the `movieflix/` folder and the root `vercel.json` already points Vercel to that app.
+If this repository is imported as-is, the Next.js app lives inside the `movieflix/` folder and the root `vercel.json` forces Vercel install/build to run inside that folder.
 
 - Keep **Root Directory** as repository root when using this repository configuration.
-- Alternatively, you can set **Root Directory** to `movieflix` and remove root-level Vercel overrides.
+- `vercel.json` now runs `cd movieflix && npm install` and `cd movieflix && npm run build` explicitly.
 - In both cases, add these environment variables in Vercel Project Settings:
   - `TMDB_READ_ACCESS_KEY`
   - `NEXT_PUBLIC_TMDB_API_KEY`

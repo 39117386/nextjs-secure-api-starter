@@ -89,7 +89,7 @@ If images are not loading, check if the `next.config.mjs` allows the image hostn
 
 ## Vercel Deployment
 
-If you import the repository from GitHub to Vercel, you can deploy directly from repo root because root scripts delegate to `movieflix/`.
+If you import the repository from GitHub to Vercel, you can deploy directly from repo root because `vercel.json` runs install/build inside `movieflix/`.
 
 Required Vercel environment variables:
 
