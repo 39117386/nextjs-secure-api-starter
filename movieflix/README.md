@@ -99,6 +99,18 @@ If this repository is imported as-is, the Next.js app lives inside the `moviefli
 
 Missing `TMDB_READ_ACCESS_KEY` or `NEXT_PUBLIC_TMDB_API_KEY` is the most common reason pages render empty or trailers/details fail in production.
 
+### If Vercel still shows 404
+
+1. Open **Vercel → Project Settings → General**.
+2. Set **Root Directory** to `movieflix` (this is the most reliable option).
+3. Go to **Environment Variables** and add:
+   - `TMDB_READ_ACCESS_KEY`
+   - `NEXT_PUBLIC_TMDB_API_KEY`
+4. Trigger **Redeploy** with "Use existing Build Cache" disabled.
+
+If Root Directory stays as repository root but your project setting ignores `vercel.json`, Vercel can deploy without app routes and return `404: NOT_FOUND`.
+
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
