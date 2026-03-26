@@ -1,0 +1,13 @@
+{
+  "name": "nextjs-secure-api-starter-root",
+  "private": true,
+  "workspaces": [
+    "movieflix"
+  ],
+  "scripts": {
+    "build": "npm --workspace movieflix run build",
+    "start": "npm --workspace movieflix run start",
+    "dev": "npm --workspace movieflix run dev",
+    "lint": "npm --workspace movieflix run lint"
+  }
+}

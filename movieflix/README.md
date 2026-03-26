@@ -87,6 +87,20 @@ TMDB_READ_ACCESS_KEY=your_read_access_token_here
 - `/src/lib`: Utility functions and API fetchers.
 - `/src/hooks`: Custom React hooks.
 
+
+## ▲ Deploy on Vercel
+
+If this repository is imported as-is, remember the Next.js app lives inside the `movieflix/` folder.
+
+- If your Vercel project **Root Directory** is repository root, keep the root `package.json` so `npm run build` delegates to `movieflix`.
+- If you prefer, set Vercel **Root Directory** to `movieflix` and use the app directly.
+- In both cases, add these environment variables in Vercel Project Settings:
+  - `TMDB_API_KEY`
+  - `TMDB_READ_ACCESS_KEY`
+  - `NEXT_URL` (set it to your production URL, e.g. `https://your-app.vercel.app`)
+
+Missing `TMDB_READ_ACCESS_KEY` is the most common reason pages render empty or API routes fail in production.
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
