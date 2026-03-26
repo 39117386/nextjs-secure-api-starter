@@ -1,5 +1,7 @@
 import { SearchResults } from "../../type";
+import { unstable_noStore as noStore } from "next/cache";
 const fetcher = async (url: URL, cacheTime?: number, page: number = 1) => {
+  noStore();
   url.searchParams.set("include_adult", "false");
   url.searchParams.set("include_video", "false");
   url.searchParams.set("sort_by", "popularity.desc");
@@ -58,6 +60,7 @@ export const getDiscoverMovies = async (id?: string, keywords?: string) => {
 };
 
 export const getSearchedMovies = async (term: string) => {
+  noStore();
   const url = new URL("https://api.themoviedb.org/3/search/movie");
   url.searchParams.set("query", term);
   url.searchParams.set("include_adult", "false");
