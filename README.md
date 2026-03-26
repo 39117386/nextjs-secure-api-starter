@@ -48,9 +48,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Create a `.env` file in the root directory with the following variables:
 
 ```env
-NEXT_URL=http://localhost:3000/
-TMDB_API_KEY=your_api_key_here
 TMDB_READ_ACCESS_KEY=your_read_access_token_here
+NEXT_PUBLIC_TMDB_API_KEY=your_api_key_here
 ```
 
 ### How to Get TMDB API Credentials
@@ -73,7 +72,7 @@ TMDB_READ_ACCESS_KEY=your_read_access_token_here
 
 3. **Get Your Credentials**
    - After approval, you'll receive:
-     - **API Key (v3 auth)**: Use this for `TMDB_API_KEY`
+     - **API Key (v3 auth)**: Use this for `NEXT_PUBLIC_TMDB_API_KEY`
      - **API Read Access Token (v4 auth)**: Use this for `TMDB_READ_ACCESS_KEY`
 
 4. **Copy to `.env`**
@@ -86,6 +85,19 @@ TMDB_READ_ACCESS_KEY=your_read_access_token_here
 - `/src/components`: Reusable UI components.
 - `/src/lib`: Utility functions and API fetchers.
 - `/src/hooks`: Custom React hooks.
+
+
+## ▲ Deploy on Vercel
+
+Now the Next.js app is at the repository root, so Vercel can deploy it with default settings.
+
+- Set **Root Directory** to repository root (`.`).
+- Add these Environment Variables in Vercel:
+  - `TMDB_READ_ACCESS_KEY`
+  - `NEXT_PUBLIC_TMDB_API_KEY`
+- Redeploy with **Use existing Build Cache** disabled if you were getting 404 before.
+
+If Vercel still shows `404: NOT_FOUND`, check that the deployment completed successfully and that you are opening the latest deployment URL.
 
 ## 🤝 Contributing
 

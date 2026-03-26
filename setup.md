@@ -14,8 +14,8 @@ Ensure you have the following installed:
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/netflix-app.git
-    cd netflix-app
+    git clone https://github.com/your-username/nextjs-secure-api-starter.git
+    cd nextjs-secure-api-starter
     ```
 
 2.  **Install Dependencies:**
@@ -85,3 +85,16 @@ If you see errors related to fetching movies, ensure your `.env` file is correct
 ### Image Issues
 
 If images are not loading, check if the `next.config.mjs` allows the image hostname. By default, `image.tmdb.org` is configured.
+
+
+## Vercel Deployment
+
+If you import the repository from GitHub to Vercel, you can deploy directly from repo root with default Next.js settings.
+
+Required Vercel environment variables:
+
+- `TMDB_READ_ACCESS_KEY`
+- `NEXT_PUBLIC_TMDB_API_KEY`
+
+
+If you see `404: NOT_FOUND` in Vercel after deploy, keep **Root Directory** as repository root and redeploy without build cache.
