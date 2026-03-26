@@ -89,28 +89,15 @@ NEXT_PUBLIC_TMDB_API_KEY=your_api_key_here
 
 ## ▲ Deploy on Vercel
 
-If this repository is imported as-is, the Next.js app lives inside the `movieflix/` folder and the root `vercel.json` forces Vercel install/build to run inside that folder.
+Now the Next.js app is at the repository root, so Vercel can deploy it with default settings.
 
-- Keep **Root Directory** as repository root when using this repository configuration.
-- `vercel.json` now runs `cd movieflix && npm install` and `cd movieflix && npm run build` explicitly.
-- In both cases, add these environment variables in Vercel Project Settings:
+- Set **Root Directory** to repository root (`.`).
+- Add these Environment Variables in Vercel:
   - `TMDB_READ_ACCESS_KEY`
   - `NEXT_PUBLIC_TMDB_API_KEY`
+- Redeploy with **Use existing Build Cache** disabled if you were getting 404 before.
 
-Missing `TMDB_READ_ACCESS_KEY` or `NEXT_PUBLIC_TMDB_API_KEY` is the most common reason pages render empty or trailers/details fail in production.
-
-### If Vercel still shows 404
-
-1. Open **Vercel → Project Settings → General**.
-2. Set **Root Directory** to repository root (so `vercel.json` can run `cd movieflix ...`).
-3. Go to **Environment Variables** and add:
-   - `TMDB_READ_ACCESS_KEY`
-   - `NEXT_PUBLIC_TMDB_API_KEY`
-4. Trigger **Redeploy** with "Use existing Build Cache" disabled.
-5. If you keep this repo-level `vercel.json`, make sure **Root Directory** is the repository root (not `movieflix`).
-
-If Root Directory is `movieflix` while using this repo-level `vercel.json`, the `cd movieflix` build commands can point to a non-existent path and deployment can fail.
-
+If Vercel still shows `404: NOT_FOUND`, check that the deployment completed successfully and that you are opening the latest deployment URL.
 
 ## 🤝 Contributing
 

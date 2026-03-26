@@ -15,7 +15,7 @@ Ensure you have the following installed:
 
     ```bash
     git clone https://github.com/your-username/nextjs-secure-api-starter.git
-    cd nextjs-secure-api-starter/movieflix
+    cd nextjs-secure-api-starter
     ```
 
 2.  **Install Dependencies:**
@@ -89,7 +89,7 @@ If images are not loading, check if the `next.config.mjs` allows the image hostn
 
 ## Vercel Deployment
 
-If you import the repository from GitHub to Vercel, you can deploy directly from repo root because `vercel.json` runs install/build inside `movieflix/`.
+If you import the repository from GitHub to Vercel, you can deploy directly from repo root with default Next.js settings.
 
 Required Vercel environment variables:
 
@@ -97,4 +97,4 @@ Required Vercel environment variables:
 - `NEXT_PUBLIC_TMDB_API_KEY`
 
 
-If you see `404: NOT_FOUND` in Vercel after deploy, keep **Root Directory** as repository root (because `vercel.json` already runs commands inside `movieflix`) and redeploy without build cache.
+If you see `404: NOT_FOUND` in Vercel after deploy, keep **Root Directory** as repository root and redeploy without build cache.
