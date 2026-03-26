@@ -97,4 +97,4 @@ Required Vercel environment variables:
 - `NEXT_PUBLIC_TMDB_API_KEY`
 
 
-If you see `404: NOT_FOUND` in Vercel after deploy, set **Root Directory** to `movieflix` in Project Settings and redeploy without build cache.
+If you see `404: NOT_FOUND` in Vercel after deploy, keep **Root Directory** as repository root (because `vercel.json` already runs commands inside `movieflix`) and redeploy without build cache.

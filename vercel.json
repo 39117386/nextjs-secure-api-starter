@@ -2,6 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "installCommand": "cd movieflix && npm install",
-  "buildCommand": "cd movieflix && npm run build",
-  "outputDirectory": "movieflix/.next"
+  "buildCommand": "cd movieflix && npm run build"
 }

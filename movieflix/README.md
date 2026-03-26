@@ -102,13 +102,14 @@ Missing `TMDB_READ_ACCESS_KEY` or `NEXT_PUBLIC_TMDB_API_KEY` is the most common 
 ### If Vercel still shows 404
 
 1. Open **Vercel → Project Settings → General**.
-2. Set **Root Directory** to `movieflix` (this is the most reliable option).
+2. Set **Root Directory** to repository root (so `vercel.json` can run `cd movieflix ...`).
 3. Go to **Environment Variables** and add:
    - `TMDB_READ_ACCESS_KEY`
    - `NEXT_PUBLIC_TMDB_API_KEY`
 4. Trigger **Redeploy** with "Use existing Build Cache" disabled.
+5. If you keep this repo-level `vercel.json`, make sure **Root Directory** is the repository root (not `movieflix`).
 
-If Root Directory stays as repository root but your project setting ignores `vercel.json`, Vercel can deploy without app routes and return `404: NOT_FOUND`.
+If Root Directory is `movieflix` while using this repo-level `vercel.json`, the `cd movieflix` build commands can point to a non-existent path and deployment can fail.
 
 
 ## 🤝 Contributing
