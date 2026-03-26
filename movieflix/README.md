@@ -48,9 +48,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Create a `.env` file in the root directory with the following variables:
 
 ```env
-NEXT_URL=http://localhost:3000/
-TMDB_API_KEY=your_api_key_here
 TMDB_READ_ACCESS_KEY=your_read_access_token_here
+NEXT_PUBLIC_TMDB_API_KEY=your_api_key_here
 ```
 
 ### How to Get TMDB API Credentials
@@ -73,7 +72,7 @@ TMDB_READ_ACCESS_KEY=your_read_access_token_here
 
 3. **Get Your Credentials**
    - After approval, you'll receive:
-     - **API Key (v3 auth)**: Use this for `TMDB_API_KEY`
+     - **API Key (v3 auth)**: Use this for `NEXT_PUBLIC_TMDB_API_KEY`
      - **API Read Access Token (v4 auth)**: Use this for `TMDB_READ_ACCESS_KEY`
 
 4. **Copy to `.env`**
@@ -95,11 +94,10 @@ If this repository is imported as-is, remember the Next.js app lives inside the 
 - If your Vercel project **Root Directory** is repository root, keep the root `package.json` so `npm run build` delegates to `movieflix`.
 - If you prefer, set Vercel **Root Directory** to `movieflix` and use the app directly.
 - In both cases, add these environment variables in Vercel Project Settings:
-  - `TMDB_API_KEY`
   - `TMDB_READ_ACCESS_KEY`
-  - `NEXT_URL` (set it to your production URL, e.g. `https://your-app.vercel.app`)
+  - `NEXT_PUBLIC_TMDB_API_KEY`
 
-Missing `TMDB_READ_ACCESS_KEY` is the most common reason pages render empty or API routes fail in production.
+Missing `TMDB_READ_ACCESS_KEY` or `NEXT_PUBLIC_TMDB_API_KEY` is the most common reason pages render empty or trailers/details fail in production.
 
 ## 🤝 Contributing
 
